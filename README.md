@@ -1,32 +1,150 @@
-# Tasalimkausar's portfolio
+# Tasalimkausar Shaikh | Developer Portfolio
 
-Next.js, Tailwind, Motion and Lenis. The existing live portfolio has not been changed.
+A responsive portfolio built with React and Next.js, with a dark violet design, smooth scrolling and a Supabase-backed owner editor.
 
-## Run on your computer
+![Portfolio home page showing Tasalimkausar's introduction, photo and skills](public/assets/portfolio-preview.png)
 
-1. Install a current Node.js LTS release.
-2. Open this folder in VS Code.
-3. In its terminal, run `npm install`, then `npm run dev`.
-4. Open the localhost address printed in the terminal.
+## Page screenshots
 
-`npm run build` checks the production build. `npm start` runs that build locally.
+These are the owner's local preview screenshots, cropped to remove browser tabs and address bars. The Projects screen below shows the original card layout; project clicks now open a details view with an explanation and live-site button.
 
-## Content and admin
+### Home
 
-`/admin` is the owner-only editor for projects, skills and certificate PDFs. Without a Supabase connection it stays locked and shows an honest setup message. Public pages use the bundled content in `app/data.js` if the database cannot be reached, so an inactive free backend does not erase the original portfolio.
+![Home page](docs/screenshots/home.jpg)
 
-The Supabase account is separate from the portfolio owner login. Account credentials never belong in source code. This prepared copy includes `.env.local` with only the project URL and browser-safe publishable key, so local admin access is already connected. The `.env.example` file names those two settings for future builds. Never put a service-role key, database password or account password in a NEXT_PUBLIC variable or in this zip.
+### About
 
-The database schema is in `supabase/schema.sql`. Owner access is an explicit allowlist in `portfolio_admins`; signing up alone does not grant editing access. Public signups are disabled in the prepared project. The owner login is already created and allowlisted; no SQL setup is needed for this copy. Policies allow visitors to read the portfolio and only the allowlisted owner to save or upload.
+![About page](docs/screenshots/about.jpg)
 
-Sign into `/admin`, choose Projects, Skills or Certificates, edit, then Save changes. Project cards support main-image and gallery-image uploads, captions and links. Use the separate portfolio-owner password saved during setup, not the Supabase dashboard password. Upload only images/PDFs intended for your portfolio, with private details hidden first. Uploaded media is accessible to anyone with its link. Removing a card does not delete its stored file, to avoid breaking links. Keep local backups of uploads and source.
+### Services
 
-Supabase Free can pause inactive projects. Resume from the Supabase project dashboard when needed. The bundled fallback remains available, but database-only edits will not be visible while that database is unavailable.
+![Services page](docs/screenshots/services.jpg)
 
-## Current restrictions
+### Projects
 
-Contact uses the confirmed WhatsApp destination. The button opens WhatsApp with a starter message; visitors review and press Send there. The website does not silently send or store enquiries. No test message was sent. Munaf testimonial uses the wording, portrait and client contact permission confirmed by the owner on 24 November 2026. Contact Client opens WhatsApp for visitor review, with no automatic send. Pricing amounts are confirmed, but package bullets are example scope and delivery times are not promised. Do not deploy or change the existing site until the owner approves it.
+![Projects page](docs/screenshots/projects.jpg)
 
-## Verified on 24 November 2026
+### Testimonial
 
-Production build, owner sign-in form, owner-only access, save and reload, project-image upload, certificate-PDF upload, sign-out and 390px layout passed. Anonymous reads work; anonymous content writes, owner-list access and uploads are denied. Existing portfolio content and its four-image Live Project gallery are preserved. Supabase project: https://supabase.com/dashboard/project/dbqcsmrvkjuchmdaljzg . No portfolio deployment was performed.
+![Testimonial page](docs/screenshots/testimonial.jpg)
+
+### Pricing
+
+![Pricing page](docs/screenshots/pricing.jpg)
+
+### Contact
+
+![Contact page](docs/screenshots/contact.jpg)
+
+### Footer
+
+![Footer page](docs/screenshots/footer.jpg)
+
+## Try the projects
+
+| Project | What it does | Live website |
+| --- | --- | --- |
+| Tomato | Food menu, cart and ordering demo. Payments use test mode. | [Open Tomato](https://tomato-shop.duckdns.org/) |
+| Job Radar AI | Resume-based job matching, AI fit analysis and application tracking. Sign-in required. | [Open Job Radar AI](https://job-radar-ai-m713.vercel.app/) |
+| Live Project / Sessio | Expert bookings, digital guides and priority questions, with a candidate dashboard. | [Open Sessio](https://munaf-career.vercel.app/) |
+
+All three landing pages were checked on November 24, 2026. This is not an end-to-end test of sign-in, booking, AI services or payments. Hosting availability can change. Do not enter real payment details to try a demo.
+
+Click a project image, title or **View project details** to see how it works, technologies, screenshots and **View Live Website**. The live button opens the actual project in a new tab.
+
+## About
+
+I'm Tasalimkausar, a software developer based in Pune. I build responsive interfaces and connected full-stack applications with React, Java and Spring Boot.
+
+This portfolio brings together my projects, skills, education, certificates, services and client feedback.
+
+## What's inside
+
+- Separate Home, About, Services, Projects, Testimonials, Pricing and Contact pages.
+- Project cards with live links, filters and screenshot galleries.
+- Tomato, Job Radar AI and a client booking/digital-products platform.
+- Certificate PDF viewing and downloads.
+- Munaf's confirmed testimonial and a Contact Client link.
+- WhatsApp contact handoff, visitors review and send their message in WhatsApp.
+- Owner-only `/admin` editor for projects, screenshots, gallery captions, skills and certificates.
+- Responsive layouts, Motion animations and Lenis smooth scrolling.
+
+## Built with
+
+| Area | Technology |
+| --- | --- |
+| Interface | React, Next.js App Router |
+| Styling | Tailwind CSS |
+| Animation | Motion, Lenis |
+| Icons | Lucide |
+| Content and sign-in | Supabase Database, Auth and Storage |
+
+## Run locally
+
+Install a current Node.js LTS release. Node.js 22 was used for testing.
+
+Open this project's folder in VS Code, then run:
+
+```bash
+npm install
+npm run dev
+```
+
+Open the local address printed in the terminal, usually `http://localhost:3000`.
+
+For a local production check:
+
+```bash
+npm run build
+npm start
+```
+
+## Environment settings
+
+The prepared source ZIP includes a `.env.local` file containing only the project URL and browser-safe Supabase publishable key. It is excluded from Git. If you cloned this repository instead, use `.env.example` to create your own `.env.local`:
+
+```dotenv
+NEXT_PUBLIC_SUPABASE_URL=your_project_url
+NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=your_publishable_key
+```
+
+Use the publishable key only. Never commit account passwords, database passwords, service-role keys or secret API keys. For hosting, set the two variables in the hosting dashboard before building.
+
+## Owner editor
+
+Open `/admin` and use the separate portfolio-owner login. It is not the Supabase dashboard login.
+
+Choose Projects, Skills or Certificates, make changes, then select **Save changes**. Uploads must be under 10 MB. Project images support JPG, PNG and WebP; certificates use PDF.
+
+Only the allowlisted owner can save content or upload files. Visitors can read portfolio content. Public signup is disabled in the configured project. Removing a card does not delete its stored file, so existing links do not break.
+
+Uploaded media can be viewed by anyone who has its link. Use only files intended for the portfolio and hide private details before uploading. Keep local backups.
+
+## Project structure
+
+```text
+app/                 Pages, UI components and content
+app/admin/           Owner sign-in and editor
+public/assets/       Images, fonts and certificate PDFs
+supabase/schema.sql  Database tables, access rules and storage setup
+```
+
+## Deployment notes
+
+This repository uses a regular Next.js build, not a static `out` export. On Netlify, use the Next.js integration with `npm run build` and publish directory `.next`. Add both Supabase environment variables before the first build.
+
+Publishing to GitHub does not make the website live. Hosting deployment is a separate step. Check current hosting plan and credit usage before publishing. Do not overwrite an existing portfolio unless that change is intended.
+
+## Content and availability
+
+Pricing amounts are owner-confirmed; package descriptions are example scope, not fixed delivery promises. The testimonial wording, portrait and client-contact permission were confirmed by the owner.
+
+If the Supabase Free project is paused or unavailable, public pages fall back to the original bundled content. Database-only edits require the backend to be available.
+
+## Connect
+
+- [GitHub](https://github.com/tasleemk17)
+- [LinkedIn](https://www.linkedin.com/in/tasleemkousar-inamdar/)
+- [Instagram](https://instagram.com/tasalimx.websolutions)
+
+Project code and photos are included for this portfolio. Font license notices are included with the assets. No general reuse license is granted for personal or client images.
