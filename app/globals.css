@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'DM Sans', Arial, sans-serif;
+  --font-display: Manrope, Arial, sans-serif;
+  --color-ink: #f5f3ff;
+  --color-bg: #000012;
+  --color-muted: #9ca3af;
+  --color-purple: #a78bfa;
+  --color-line: #282535;
+
+  --animate-marquee: marquee 40s linear infinite;
+  --animate-gradient-shift: gradient-shift 9s ease-in-out infinite;
+  --animate-status-pulse: status-pulse 3s ease-in-out infinite;
+  --animate-floor-glow: floor-glow 5s ease-in-out infinite;
+  --animate-portrait-float: portrait-float 8s ease-in-out infinite;
+  --animate-aura-breathe: aura-breathe 7s ease-in-out infinite;
+  --animate-cursor-blink: cursor-blink .85s steps(1) infinite;
+  --animate-hello-wave: hello-wave 5s ease-in-out infinite;
+  --animate-glow-breathe: glow-breathe 8s ease-in-out infinite;
+
+  @keyframes marquee { to { transform: translateX(-33.333333%); } }
+  @keyframes gradient-shift { 0%,100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
+  @keyframes status-pulse { 0%,100% { box-shadow: 0 0 0 0 #87dbb122; } 50% { box-shadow: 0 0 0 4px #87dbb108, 0 0 12px #87dbb155; } }
+  @keyframes floor-glow { 0%,100% { opacity: .4; scale: .85; } 50% { opacity: 1; scale: 1.1; } }
+  @keyframes portrait-float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+  @keyframes aura-breathe { 0%,100% { opacity: .65; scale: .96; } 50% { opacity: 1; scale: 1.1; } }
+  @keyframes cursor-blink { 0%,50% { opacity: 1; } 51%,100% { opacity: 0; } }
+  @keyframes hello-wave { 0%,65%,100% { rotate: 0deg; } 70%,80% { rotate: 18deg; } 75%,85% { rotate: -8deg; } }
+  @keyframes glow-breathe { 0%,100% { opacity: .65; scale: .94; } 50% { opacity: 1; scale: 1.08; } }
+}
+
+@font-face { font-family: 'DM Sans'; font-style: normal; font-weight: 400; font-display: swap; src: url(/assets/font-0.ttf) format('truetype'); }
+@font-face { font-family: 'DM Sans'; font-style: normal; font-weight: 500; font-display: swap; src: url(/assets/font-1.ttf) format('truetype'); }
+@font-face { font-family: 'DM Sans'; font-style: normal; font-weight: 600; font-display: swap; src: url(/assets/font-2.ttf) format('truetype'); }
+@font-face { font-family: 'DM Sans'; font-style: normal; font-weight: 700; font-display: swap; src: url(/assets/font-3.ttf) format('truetype'); }
+@font-face { font-family: 'Manrope'; font-style: normal; font-weight: 400; font-display: swap; src: url(/assets/font-4.ttf) format('truetype'); }
+@font-face { font-family: 'Manrope'; font-style: normal; font-weight: 500; font-display: swap; src: url(/assets/font-5.ttf) format('truetype'); }
+@font-face { font-family: 'Manrope'; font-style: normal; font-weight: 600; font-display: swap; src: url(/assets/font-6.ttf) format('truetype'); }
+@font-face { font-family: 'Manrope'; font-style: normal; font-weight: 700; font-display: swap; src: url(/assets/font-7.ttf) format('truetype'); }
+@font-face { font-family: 'Manrope'; font-style: normal; font-weight: 800; font-display: swap; src: url(/assets/font-8.ttf) format('truetype'); }
+
+@layer base {
+  html { scroll-padding-top: 100px; }
+  body { margin: 0; overflow-x: clip; background: #000012; color: #f5f3ff; font-family: 'DM Sans', Arial, sans-serif; font-synthesis: none; }
+  main { overflow: clip; }
+  h1, h2, h3, p { margin: 0; }
+  h1, h2, h3 { font-family: Manrope, Arial, sans-serif; letter-spacing: -.05em; line-height: 1.12; }
+  p { color: var(--color-muted); line-height: 1.8; }
+  img { display: block; max-width: 100%; height: auto; }
+  button, a { -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
+  a { text-decoration: none; color: inherit; }
+  button { font: inherit; color: inherit; cursor: pointer; border: 0; }
+  button:focus-visible, a:focus-visible { outline: 2px solid #818cf8; outline-offset: 5px; }
+  ::selection { background: #6366f1; color: white; }
+  @media (max-width: 760px) { html { scroll-padding-top: 90px; } }
+}
+
+@utility text-gradient {
+  color: #a78bfa;
+  background: linear-gradient(110deg, #818cf8, #a855f7 50%, #c084fc);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  animation: gradient-shift 9s ease-in-out infinite;
+}
+
+@utility text-gradient-hero {
+  color: #a78bfa;
+  background: linear-gradient(100deg, #818cf8, #a855f7, #c084fc);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  animation: gradient-shift 9s ease-in-out infinite;
+  display: inline-block;
+}
+
+@utility text-gradient-service {
+  color: #a78bfa;
+  background: linear-gradient(100deg, #818cf8, #c084fc);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
