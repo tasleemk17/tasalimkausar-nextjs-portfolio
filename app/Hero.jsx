@@ -22,7 +22,7 @@ export default function Hero() {
           <Reveal delay={.08}>
             <h1 className="mt-6 text-[58px] leading-[1.08] font-extrabold tracking-[-.03em] max-[1050px]:text-[50px] max-[760px]:text-[40px] max-[760px]:mt-5 max-[350px]:text-[34px]">
               Software Developer<br />
-              <span className="text-gradient-hero">&amp; App Developer</span>
+              <span className="text-gradient-hero">&amp; Web Developer</span>
             </h1>
           </Reveal>
           <Reveal delay={.16}>
